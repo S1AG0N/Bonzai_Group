@@ -1,0 +1,87 @@
+{% load static %}
+<!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="{% static 'schools/materialize.css' %}" rel="stylesheet">
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> bonzai HS </title>
+</head>
+<body>
+
+<nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">Bonzai Group of Schools</a>
+
+      <ul id="dropdown1" class="dropdown-content">
+          <li><a href="#!">one</a></li>
+          <li><a href="#!">two</a></li>
+          <li class="divider"></li>
+          <li><a href="#!">three</a></li>
+       </ul>
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="sass.html">Admissions</a></li>
+        <li><a href="badges.html">News</a></li>
+        <li><a href="collapsible.html">Gallery</a></li>
+        <li><a href="collapsible.html">Vacancies</a></li>
+        <li><a href="collapsible.html">Sports</a></li>
+        <li><a href="collapsible.html">Contact Us</a></li>
+
+        {% if user.is_authenticated %}
+          <script>
+              $(".dropdown-trigger").dropdown();
+          </script>
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">{{user.username}}<i class="material-icons right">arrow_drop_down</i></a></li>
+
+        {% else %}
+         <li><a href="/register">Student Portal</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+<br>
+<br>
+
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success'%}
+                <script>
+                    M.toast({html: "{{message}}", classes: 'materialize-red rounded', displayLength:2000});
+                </script>
+            {% elif message.tags == 'info' %}
+                <script>
+                    M.toast({html: "{{message}}", classes: 'teal rounded', displayLength:10000});
+                </script>
+            {% elif message.tags == 'warning'%}
+                <script>
+                    M.toast({html: "{{message}}", classes: 'orange rounded', displayLength:10000});
+                </script>
+            {% elif message.tags == 'error'%}
+                <script>
+                    M.toast({html: "{{message}}", classes: 'red rounded', displayLength:10000});
+                </script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+
+    {% block content %}
+    {% endblock %}
+
+
+<script type="text/javascript" src="{% static 'schools/materialize.js' %}"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+
+</body>
+</html>

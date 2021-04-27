@@ -4,6 +4,7 @@ from django.db import models
 class School(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
+    grades = models.CharField(max_length=200, default="Ask office for grades")
     image = models.ImageField(upload_to='schools/images')
     url = models.URLField(blank=True)
 
