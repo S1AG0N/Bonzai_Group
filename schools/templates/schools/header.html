@@ -35,10 +35,10 @@
 
         {% if user.is_authenticated %}
           <script>
-              $(".dropdown-trigger").dropdown();
+              $(".dropdown-trigger").dropdown({ hover: false });
           </script>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">{{user.username}}<i class="material-icons right">arrow_drop_down</i></a></li>
-
+          <li><a href="logout/">Log Out</a></li>
         {% else %}
          <li><a href="/register">Student Portal</a></li>
         {% endif %}
@@ -76,7 +76,8 @@
     {% endblock %}
 
 
-<script type="text/javascript" src="{% static 'schools/materialize.js' %}"></script>
+
+
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="

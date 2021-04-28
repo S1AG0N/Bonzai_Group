@@ -1,0 +1,17 @@
+{% extends 'schools/header.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <br>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_ul}}
+            <br>
+            <button class="btn waves-effect waves-light" sytle="background-color: materialize-red" type="submit">LogIn</button>
+            Don't have an account? <a href="/register" role="button" class="btn waves-effect waves-light "><strong>Register</strong></a>
+
+        </form>
+    </div>
+
+{% endblock %}

@@ -2,58 +2,53 @@
 {% block content %}
 {% load static %}
 
-<!-- <img src="{% static 'schools/home1.jpg' %}" height="85%" width="75%"> --!>
-<div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>Left Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
-        <div class="caption right-align">
-          <h3>Right Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <!--  <img src="{{school.image.url}}" width="30%" height="60%"> --!>
+<!--Slide Images-->
 
+
+<div class="main-wrapper">
+    <div class="slider-holder">
+        <div class="carousel carousel-slider">
+            <a class="carousel-item" href="#one!"><img src="{% static 'schools/1.jpg' %}" width="50%" height="50%"></a>
+            <a class="carousel-item" href="#two!"><img src="{% static 'schools/2.jpg' %}" width="50%" height="50%"></a>
+            <a class="carousel-item" href="#three!"><img src="{% static 'schools/3.jpg' %}" width="50%" height="50%"></a>
+            <a class="carousel-item" href="#four!"><img src="{% static 'schools/4.jpg' %}" width="50%" height="50%"></a>
+        </div>
+    </div>
+</div>
+
+  <!--  <img src="{{school.image.url}}" width="30%" height="60%"> -->
+
+<!--Script for Slider -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+<script>
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  });
+</script>
+
+<!-- Schools Tabs --
 <div class="row">
     {% for school in xul %}
-        <div class="col s12 m6">
+        <div class="col s12 m3">
           <div class="card materialize-red ">
-                      <img src="{{school.image.url}}" class="rounded" height="25%" width="25%">
 
             <div class="card-content white-text">
+              <span><img src="{{school.image.url}}" class="rounded" height="30%" width="100%"></span>
+                            <span class="card-title">{{school.name}}</span>
 
-              <span class="card-title">{{school.name}}</span>
               <p>{{school.description}}</p>
             </div>
             <div class="card-action">
               <a href="#">Visit School</a>
-           <!--   <a href="#">This is a link</a> --!>
+
             </div>
           </div>
         </div>
     {% endfor %}
   </div>
+-->
+
 {% endblock %}
