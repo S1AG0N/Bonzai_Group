@@ -1,0 +1,18 @@
+{% extends 'schools/header.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>news</title>
+</head>
+<body>
+<div class="container" align="center">
+    <h1>The Bonzai Bulletin</h1>
+
+        <h4>{{detail.title}}</h4>
+        <h6> {{detail.date}}</h6>
+    <br>
+        {{detail.script}}
+
+</div>
+</body>
+{% endblock%}

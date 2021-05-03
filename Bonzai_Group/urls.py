@@ -26,6 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("logout/", views.logout_request, name="logout"),
     path("login/", views.login_request, name="login"),
+    path("news/", views.news, name='news'),
+    path('<slug:slug>/', views.details, name='details'),
 ]
 
 

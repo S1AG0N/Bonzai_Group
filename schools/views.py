@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse
-from .models import School
+from .models import School, New
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
+from .forms import CreateUserForm
 
 
 def home(request):
@@ -12,21 +13,16 @@ def home(request):
 
 
 def register(request):
+    form = CreateUserForm()
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = CreateUserForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            username = form.cleaned_data.get("username")
-            messages.success(request, f"{username} you have been successfully registered!")
-            login(request, user)
-            messages.info(request, f"You are now logged in as: {username}")
-            return redirect('/')
-        else:
-            for msg in form.error_messages:
-                messages.error(request, f"{msg}: {form.error_messages[msg]}")
+            form.save()
+            messages.success(request, 'You have successfully created your account!')
+            return redirect('login')
 
-    form = UserCreationForm
-    return render(request, 'schools/register.html', {'form': form})
+    context = {'form': form}
+    return render(request, 'schools/register.html', context)
 
 
 def logout_request(request):
@@ -37,19 +33,26 @@ def logout_request(request):
 
 def login_request(request):
     if request.method == "POST":
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            username = form.get_clean.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                messages.info(request, f"You are now logged in as {username}")
-                return redirect('home')
-            else:
-                messages.error(request, "Invalid username or password")
-        else:
-            messages.error(request, "Invalid username or password")
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
 
-    form = AuthenticationForm()
-    return render(request, "schools/login.html", {'form': form})
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.info(request, "Username or Password is incorrect!")
+
+    context = {}
+    return render(request, "schools/login.html", context)
+
+
+def news(request):
+    articles = New.objects.all()
+    return render(request, "schools/news.html", {'articles': articles})
+
+
+def details(request, slug):
+    detail = New.objects.get(slug=slug)
+    return render(request, "schools/detail.html", {'detail': detail})
+
