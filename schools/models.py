@@ -8,6 +8,7 @@ class School(models.Model):
     grades = models.CharField(max_length=200, default="Ask office for grades")
     image = models.ImageField(upload_to='schools/images')
     url = models.URLField(blank=True)
+    slug = models.SlugField(max_length=20, default="school_slug")
 
     def __str__(self):
         return self.name

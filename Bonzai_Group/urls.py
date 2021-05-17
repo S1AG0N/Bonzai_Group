@@ -27,7 +27,13 @@ urlpatterns = [
     path("logout/", views.logout_request, name="logout"),
     path("login/", views.login_request, name="login"),
     path("news/", views.news, name='news'),
+    path('bonzai-northend/', views.bhs, name='bonzai-northend'),
+    path('bonzai-newton-park/', views.np, name='bonzai-newton-park'),
+    path('bonzai-uitenhage/', views.ut, name='bonzai-uitenhage'),
+    path('bonzai-kabega/', views.kabega, name='bonzai-kabega'),
+    path('bonzai-sydenham/', views.sydenham, name='bonzai-sydenham'),
     path('<slug:slug>/', views.details, name='details'),
+
 ]
 
 

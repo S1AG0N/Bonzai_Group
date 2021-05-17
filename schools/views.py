@@ -52,7 +52,37 @@ def news(request):
     return render(request, "schools/news.html", {'articles': articles})
 
 
+'''bonzai high school northend '''
+
+
+def bhs(request):
+    context = {}
+    return render(request, 'schools/bonzai-northend.html', context)
+
+
+def np(request):
+    context = {}
+    return render(request, 'schools/bonzai-newton-park.html', context)
+
+
+def ut(request):
+    context = {}
+    return render(request, 'schools/bonzai-uitenhage.html', context)
+
+
+def sydenham(request):
+    context = {}
+    return render(request, 'schools/bonzai-sydenham.html', context)
+
+
+def kabega(request):
+    context = {}
+    return render(request, 'schools/bonzai-kabega.html', context)
+
+
 def details(request, slug):
     detail = New.objects.get(slug=slug)
     return render(request, "schools/detail.html", {'detail': detail})
+
+
 
