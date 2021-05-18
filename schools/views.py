@@ -85,4 +85,17 @@ def details(request, slug):
     return render(request, "schools/detail.html", {'detail': detail})
 
 
+'''schools header'''
 
+
+def schools_header(request):
+    xul = School.objects.all()
+    return render(request, 'schools/schools_header.html', {'xul': xul})
+
+
+'''enroll'''
+
+
+def enroll(request):
+    schools = School.objects.all()
+    return render(request, 'schools/enroll.html', {'schools': schools})

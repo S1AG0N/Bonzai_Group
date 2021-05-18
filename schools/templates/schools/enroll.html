@@ -1,0 +1,78 @@
+{% extends 'schools/header.html' %}
+{% block content %}
+{% load static %}
+<div class="container" align="center">
+    <h1>Fees Structure</h1>
+    <p>
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+        "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat risus at metus pharetra tristique. Curabitur faucibus ligula lacus, id venenatis risus rhoncus eu. Donec laoreet maximus elit ac efficitur. Proin blandit mi in justo vestibulum aliquam. Maecenas eget magna porta, maximus lorem quis, gravida magna. Donec efficitur erat vel lacus euismod venenatis ullamcorper iaculis metus. Integer ut quam lorem. Aliquam erat volutpat. Vivamus rutrum erat non nunc mollis feugiat. Cras sed auctor risus, sit amet venenatis orci. Pellentesque neque leo, condimentum a varius non, viverra sit amet tortor. Morbi dignissim justo sed congue ullamcorper. Nullam nec venenatis metus.
+
+        Generated 1 paragraph, 99 words, 683 bytes of Lorem Ipsum
+    </p>
+    <br>
+    <h1>School Transport</h1>
+    <p>
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+        "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat risus at metus pharetra tristique. Curabitur faucibus ligula lacus, id venenatis risus rhoncus eu. Donec laoreet maximus elit ac efficitur. Proin blandit mi in justo vestibulum aliquam. Maecenas eget magna porta, maximus lorem quis, gravida magna. Donec efficitur erat vel lacus euismod venenatis ullamcorper iaculis metus. Integer ut quam lorem. Aliquam erat volutpat. Vivamus rutrum erat non nunc mollis feugiat. Cras sed auctor risus, sit amet venenatis orci. Pellentesque neque leo, condimentum a varius non, viverra sit amet tortor. Morbi dignissim justo sed congue ullamcorper. Nullam nec venenatis metus.
+
+        Generated 1 paragraph, 99 words, 683 bytes of Lorem Ipsum
+    </p>
+</div>
+
+<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<h3 id="form-title" ALIGN="CENTER">CREATE STUDENT ACCOUNT</h3>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+
+					<form method="POST" action="">
+						{% csrf_token %}
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							{{ form.username }}
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+							</div>
+							{{ form.email }}
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							{{ form.password1 }}
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							{{ form.password2 }}
+						</div>
+						{{form.errors}}
+						{% for message in messages %}
+							<p id="messages">{{ message }}</p>
+						{% endfor %}
+				   		<div class="d-flex justify-content-center mt-3 login_container">
+				 			<input class="btn login_btn" type="submit" value="Register Account">
+				   		</div>
+					</form>
+				</div>
+
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Already have an account? <a href="{% url 'login' %}" class="link ml-2">Login</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
