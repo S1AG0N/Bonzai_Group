@@ -99,3 +99,8 @@ def schools_header(request):
 def enroll(request):
     schools = School.objects.all()
     return render(request, 'schools/enroll.html', {'schools': schools})
+
+
+def contact_us(request):
+    schools = School.objects.all()
+    return render(request, 'schools/contact-us.html', {'schools': schools})
