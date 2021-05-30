@@ -34,9 +34,9 @@
           <a class="nav-link clr" href="#">Admissions</a>
         </li>
         <li class="nav-item"><a class="nav-link clr" href="{% url 'news'%}">News</a></li>
-        <li class="nav-item"><a class="nav-link clr" href="collapsible.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link clr" href="collapsible.html">Vacancies</a></li>
-        <li class="nav-item"><a class="nav-link clr" href="collapsible.html">Sports</a></li>
+        <li class="nav-item"><a class="nav-link clr" href="{% url 'gallery' %}">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link clr" href="#">Vacancies</a></li>
+        <li class="nav-item"><a class="nav-link clr" href="#">Sports</a></li>
 
         {% if user.is_authenticated %}
         <li class="nav-item dropdown ms-auto">

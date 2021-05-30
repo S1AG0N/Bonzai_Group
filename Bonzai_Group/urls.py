@@ -28,6 +28,7 @@ urlpatterns = [
     path("login/", views.login_request, name="login"),
     path("news/", views.news, name='news'),
     path("enroll/", views.enroll, name='enroll'),
+    path("gallery/", views.gallery, name='gallery'),
     path("contact-us/", views.contact_us, name='contact-us'),
     path('bonzai-northend/', views.bhs, name='bonzai-northend'),
     path('bonzai-newton-park/', views.np, name='bonzai-newton-park'),

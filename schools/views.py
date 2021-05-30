@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from .forms import CreateUserForm
+from django.core.mail import send_mail
 
 
 def home(request):
@@ -103,4 +104,27 @@ def enroll(request):
 
 def contact_us(request):
     schools = School.objects.all()
+    if request.method == 'POST':
+        fname = request.POST.get('fname')
+        subject = request.POST.get('subject')
+        email = request.POST.get('email')
+        comment = request.POST.get('comment')
+
+        data = {
+            'fname': fname,
+            'subject': subject,
+            'email': email,
+            'comment': comment,
+        }
+        message = '''
+        From: {}
+        Subject: {}       
+        Message: {}
+        
+        '''.format(data['email'], data['subject'], data['comment'])
+        send_mail(data['subject'], message, data['email'], ['acconline17@gmail.com'])
     return render(request, 'schools/contact-us.html', {'schools': schools})
+
+
+def gallery(request):
+    return render(request, 'schools/gallery.html', {})
