@@ -128,3 +128,7 @@ def contact_us(request):
 
 def gallery(request):
     return render(request, 'schools/gallery.html', {})
+
+
+def about(request):
+    return render(request, 'schools/aboutus.html', {})
