@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Bonzai Gallery</title>
     <!-- Bootstrap -->
-<!--    <link href="{% static 'schools/bootstrap.min.css' %}" rel="stylesheet">-->
+    <link href="{% static 'schools/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'schools/font-awesome.min.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'schools/templatemo_misc.css'%}">
     <link href="{% static 'schools/templatemo_style.css' %}" rel="stylesheet">
@@ -285,5 +285,17 @@
     </div>
     </div>
       <!-- gallery end -->
+
+  <script>
+    	$('.gallery_more').click(function(){
+		var $this = $(this);
+		$this.toggleClass('gallery_more');
+		if($this.hasClass('gallery_more')){
+			$this.text('Load More');			
+		} else {
+			$this.text('Load Less');
+		}
+	});
+  </script>
 </body>
 {% endblock %}
