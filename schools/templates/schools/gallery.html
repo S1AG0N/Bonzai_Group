@@ -3,6 +3,7 @@
 {% block content %}
 <!--
 <head>
+<<<<<<< HEAD
   <link href="{% static 'schools/style.css' %}" rel="stylesheet">
   <link href="{% static 'schools/aos.css' %}" rel="stylesheet">
   <link href="{% static 'schools/glightbox.min.css' %}" rel="stylesheet">
@@ -13,6 +14,16 @@
  <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="gallery">
       <div class="container">
+=======
+    <meta charset="UTF-8">
+    <title>Bonzai Gallery</title>
+    <!-- Bootstrap -->
+    <link href="{% static 'schools/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'schools/font-awesome.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'schools/templatemo_misc.css'%}">
+    <link href="{% static 'schools/templatemo_style.css' %}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,600' rel='stylesheet' type='text/css'>
+
 
         <div class="section-title" data-aos="fade-up">
           <h2>Gallery</h2>
@@ -88,10 +99,37 @@
         </div>
 
       </div>
+<<<<<<< HEAD
     </section><!-- End Gallery Section -->
 
 <!-- Vendor JS Files -->
   <script src="{% static 'schools/aos.js' %}"></script>
   <script src="{% static 'schools/glightbox.min.js' %}"></script>
 
+=======
+    	</div>
+	</div>
+    <div class="container">
+    	<div class="row">
+        	<div class="templatemo_loadmore">
+			 <button class="gallery_more" id="button" onClick="showhide()">Load More</button>
+            </div>
+        </div>
+    </div>
+    </div>
+      <!-- gallery end -->
+
+  <script>
+    	$('.gallery_more').click(function(){
+		var $this = $(this);
+		$this.toggleClass('gallery_more');
+		if($this.hasClass('gallery_more')){
+			$this.text('Load More');			
+		} else {
+			$this.text('Load Less');
+		}
+	});
+  </script>
+</body>
+>>>>>>> ac19a88b94d40117df6709de0b0d48ca1f7be522
 {% endblock %}
