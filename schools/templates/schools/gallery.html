@@ -1,289 +1,97 @@
 {% extends 'schools/header.html' %}
 {% load static %}
 {% block content %}
-
+<!--
 <head>
-    <meta charset="UTF-8">
-    <title>Bonzai Gallery</title>
-    <!-- Bootstrap -->
-<!--    <link href="{% static 'schools/bootstrap.min.css' %}" rel="stylesheet">-->
-    <link href="{% static 'schools/font-awesome.min.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'schools/templatemo_misc.css'%}">
-    <link href="{% static 'schools/templatemo_style.css' %}" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,600' rel='stylesheet' type='text/css'>
-
-    <script src="{% static 'schools/jquery-1.10.2.min.js' %}"></script>
-	<script src="{% static 'schools/jquery.lightbox.js' %}"></script>
-	<script src="{% static 'schools/templatemo_custom.js' %}"></script>
-    <script>
-    function showhide()
-    {
-    	var div = document.getElementById("newpost");
-		if (div.style.display !== "none")
-		{
-			div.style.display = "none";
-		}
-		else {
-			div.style.display = "block";
-		}
-    }
-  	</script>
-
-
+  <link href="{% static 'schools/style.css' %}" rel="stylesheet">
+  <link href="{% static 'schools/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'schools/glightbox.min.css' %}" rel="stylesheet">
+  <!-- <link href="{% static 'schools/boxicons.min.css' % }" rel="stylesheet">
+  <link href="{% static 'schools/remixicon.css' %}" rel="stylesheet">
 </head>
-<body>
-<!-- gallery start -->
-    <div class="content homepage" id="menu-1">
-    <div class="container">
-	    <div class="row templatemorow">
-    		<div class="hex col-sm-6">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g1.jpg' %});">
-             	 	<div class="overlay">
-						<a href="{% static 'schools/g1.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
+-->
+ <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Gallery</h2>
+          <p>Check our Gallery</p>
+        </div>
+
+        <div class="row no-gutters" data-aos="fade-left">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+              <a href="{% static 'schools/g1.jpg' %}" class="gallery-lightbox">
+                <img src="{% static 'schools/g1.jpg' %}" alt="" class="img-fluid">
+              </a>
             </div>
           </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g2.jpg' %});">
-              	<div class="overlay">
-						<a href="{% static 'schools/g2.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
+              <a href="{% static 'schools/g2.jpg' %}" class="gallery-lightbox">
+                <img src="{% static 'schools/g2.jpg' %}" alt="" class="img-fluid">
+              </a>
             </div>
           </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6  templatemo-hex-top2">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g3.jpg' %});">
-              	<div class="overlay">
-						<a href="{% static 'schools/g3.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+              <a href="{% static 'schools/g3.jpg' %}" class="gallery-lightbox">
+                <img src="{% static 'schools/g3.jpg' %}" alt="" class="img-fluid">
+              </a>
             </div>
           </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6  templatemo-hex-top3">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g4.jpg' %});">
-              	<div class="overlay">
-						<a href="{% static 'schools/g4.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250">
+              <a href="{% static 'schools/g4.jpg' %}" class="gallery-lightbox">
+                <img src="{% static 'schools/g4.jpg' %}" alt="" class="img-fluid">
+              </a>
             </div>
           </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6  templatemo-hex-top3">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g5.jpg' %});">
-              		<div class="overlay">
-						<a href="{% static 'schools/g5.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+              <a href="{% static 'schools/g5.jpg' %}" class="gallery-lightbox">
+                <img src="{% static 'schools/g5.jpg' %}" alt="" class="img-fluid">
+              </a>
             </div>
           </div>
-        </div>
-    </div>
-  	     <div class="hex col-sm-6 hex-offset templatemo-hex-top1 templatemo-hex-top2">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g3.jpg' %});">
-              		<div class="overlay">
-						<a href="{% static 'schools/g3.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="350">
+              <a href="{% static 'schools/g6.jpg' %}" class="gallery-lightbox">
+                <img src="{% static 'schools/g6.jpg' %}" alt="" class="img-fluid">
+              </a>
             </div>
           </div>
-        </div>
-    </div>
-     <div class="hex col-sm-6 templatemo-hex-top1 templatemo-hex-top3">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g2.jpg' %});">
-              		<div class="overlay">
-						<a href="{% static 'schools/g2.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+              <a href="{% static 'schools/g7.jpg' %}" class="gallery-lightbox">
+                <img src="{% static 'schools/g7.jpg' %}" alt="" class="img-fluid">
+              </a>
             </div>
           </div>
-        </div>
-    </div>
-      <div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top3">
-      	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/1.jpg' %});">
-              		<div class="overlay">
-						<a href="{% static 'schools/g1.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
+              <a href="{% static 'schools/g8.jpg' %}" class="gallery-lightbox">
+                <img src="{% static 'schools/g8.jpg' %}" alt="" class="img-fluid">
+              </a>
             </div>
           </div>
+
         </div>
+
       </div>
-      <div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top2">
-      	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g5.jpg' %});">
-              		<div class="overlay">
-						<a href="{% static 'schools/g5.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    	</div>
-	</div>
-    <div  id="newpost" style="display:none;" class="container answer_list templatemo_gallerytop">
-	    <div class="row templatemorow">
-    		<div class="hex col-sm-6">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g4.jpg' %});">
-             	 	<div class="overlay">
-						<a href="{% static 'schools/g4.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g3.jpg' %});">
-              	<div class="overlay">
-						<a href="{% static 'schools/g3.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6  templatemo-hex-top2">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g2.jpg' %});">
-              	<div class="overlay">
-						<a href="{% static 'schools/g2.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6  templatemo-hex-top3">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g1.jpg' %});">
-              	<div class="overlay">
-						<a href="{% static 'schools/g1.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6  templatemo-hex-top3">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g5.jpg' %});">
-              		<div class="overlay">
-						<a href="{% static 'schools/g5.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-  	     <div class="hex col-sm-6 hex-offset templatemo-hex-top1 templatemo-hex-top2">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g4.jpg' %});">
-              		<div class="overlay">
-						<a href="{% static 'schools/g4.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-     <div class="hex col-sm-6 templatemo-hex-top1 templatemo-hex-top3">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g3.jpg' %});">
-              		<div class="overlay">
-						<a href="{% static 'schools/g3.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-      <div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top3">
-      	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g2.jpg' %});">
-              		<div class="overlay">
-						<a href="{% static 'schools/g2.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top2">
-      	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url({% static 'schools/g1.jpg' %});">
-              		<div class="overlay">
-						<a href="{% static 'schools/g1.jpg' %}" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    	</div>
-	</div>
-    <div class="container">
-    	<div class="row">
-        	<div class="templatemo_loadmore">
-			 <button class="gallery_more" id="button" onClick="showhide()">Load More</button>
-            </div>
-        </div>
-    </div>
-    </div>
-      <!-- gallery end -->
-</body>
+    </section><!-- End Gallery Section -->
+
+<!-- Vendor JS Files -->
+  <script src="{% static 'schools/aos.js' %}"></script>
+  <script src="{% static 'schools/glightbox.min.js' %}"></script>
+
 {% endblock %}
